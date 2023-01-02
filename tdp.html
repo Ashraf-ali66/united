@@ -26,7 +26,7 @@
 
 .parent{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
         gap:20px;
 
         margin: 0 10px 0 10px;
@@ -35,7 +35,7 @@
         
     }
     .im img{
-        width: 100%;
+        width: 70%;
         
     }
     
@@ -54,7 +54,7 @@
 @media (max-width:1300px)
  {
     .parent{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
     }
     .im img{
         width: 100%;
@@ -63,18 +63,38 @@
     
     
 }
+@media(max-width:950px)
+{
+.parent{
+    grid-template-columns: 1fr;
+}
+}
+
 @media(max-width:800px)
 {
     .parent{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         
     }
-    center img{
-        width: 60%;
+    .im img{
+        width: 100%;
+    }
+    .boxes img{
+        width: 100%;
+        width: 75%;
     }
 
+    
+    
 
 }
+@media(max-width:550px)
+{
+    .im img{
+        width: 100%;
+    }
+}
+
 @media(max-width:480px)
 {
   .parent{
@@ -84,9 +104,10 @@
    h1{
     font-size: 25px;
    }
-   .im img{
-    height: 250px;
+   .boxes img,video{
+    width: 80%;
    }
+   .boxes 
    #tophead,#tophead2{
     font-size: 25px;
    }
