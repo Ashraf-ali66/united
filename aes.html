@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES</title>
+</head>
+<body>
+    <form action="" method="POST" id="form">
+        Name: <br>
+        <input type="text" name="Name"> <br>
+        Roll: <br>
+        <input type="text" name="Roll"> <br>
+        Class: <br>
+        <input type="text" name="Class"> <br>
+        Section: <br>
+        <input type="text" name="Section"> <br><br><br>
+
+        <table border="1" cellspacing="0">
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+            </tr>
+            <tr>
+                <td>Q.1</td>
+                <td><input type="checkbox" name="Q1a" id=""></td>
+                <td><input type="checkbox" name="Q1b" id=""></td>
+                <td><input type="checkbox" name="Q1c" id=""></td>
+                <td><input type="checkbox" name="Q1d" id=""></td>
+            </tr>
+            <tr>
+                <td>Q.2</td>
+                <td><input type="checkbox" name="Q2a" id=""></td>
+                <td><input type="checkbox" name="Q2b" id=""></td>
+                <td><input type="checkbox" name="Q2c" id=""></td>
+                <td><input type="checkbox" name="Q2d" id=""></td>
+            </tr>
+            <tr>
+                <td>Q.3</td>
+                <td><input type="checkbox" name="Q3a" id=""></td>
+                <td><input type="checkbox" name="Q3b" id=""></td>
+                <td><input type="checkbox" name="Q3c" id=""></td>
+                <td><input type="checkbox" name="Q3d" id=""></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        let url = 'https://script.google.com/macros/s/AKfycbzqvCG343Yv_ITI19sHCA4OwKIitYOUT-miQRTrIO76FtElQFUyf5PqjneaKBN-3bjY1Q/exec';
+        let form = document.querySelector('#form');
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let d = new FormData(form);
+            fetch(url, {
+                method: "POST",
+                body: d
+            }).then((res) => res.text())
+              .then((finalres) => console.log(finalres))
+              .catch((error) => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
